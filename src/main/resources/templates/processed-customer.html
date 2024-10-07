@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Customer Confirmation</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            div {
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            h4 {
+                color: #333;
+            }
+            span {
+                color: #555;
+                display: block;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h4>Customer confirmed!</h4>
+            <span th:text="'The customer ' + ${customer_name.firstName} + ' ' + ${customer_name.lastName} + ' (' + ${customer_name.age} + ') was confirmed successfully!'"></span>
+            <h4>Customer postal code:</h4>
+            <span th:text="${customer_name.postalCode}"></span>
+            <h4>Customer course code:</h4>
+            <span th:text="${customer_name.courseCode}"></span>
+        </div>
+    </body>
+</html>
