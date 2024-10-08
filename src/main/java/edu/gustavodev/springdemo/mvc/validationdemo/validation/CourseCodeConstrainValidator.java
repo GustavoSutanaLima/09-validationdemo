@@ -13,8 +13,18 @@ public class CourseCodeConstrainValidator implements ConstraintValidator<CourseC
     }
 
     @Override
-    public boolean isValid(String codeTypedByUserAtTheHtmlForm, ConstraintValidatorContext constraintValidatorContext) {
-        boolean result = codeTypedByUserAtTheHtmlForm.startsWith(coursePrefix);
+    public boolean isValid(String codePassedOnTheHtmlFile, ConstraintValidatorContext context) {
+
+        boolean result;
+
+        if (codePassedOnTheHtmlFile != null) {
+            result = codePassedOnTheHtmlFile.startsWith(coursePrefix);
+        }
+
+        else {
+            result = true; //porque esse field não é required;
+        }
+        
         return result;
     }
 

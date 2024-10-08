@@ -25,7 +25,7 @@ public class Customer {
     /*A anotação @Pattern só pode ser usada com strings. */
     private String postalCode;
 
-    @CourseCode(value = "GUS", message = "O código do curso precisa inicar em: GUS")
+    @CourseCode(value = "TOPS", message = "O código do curso precisa inicar em: TOPS")
     private String courseCode;
 
     /* Construtor vazio */
